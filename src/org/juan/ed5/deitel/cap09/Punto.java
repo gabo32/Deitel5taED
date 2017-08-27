@@ -14,12 +14,18 @@ public class Punto {
     private int y;
     
     public Punto(){
-        
+        System.out.println("COnstructor sin argumentos");
     }
     
     public Punto(int x,int y){
         this.x = x;
         this.y = y;
+        System.out.println("Constructor de punto "+this);
+    }
+    
+    @Override
+    protected void finalize(){
+        System.out.println("Finalizador de putno");
     }
 
     /**

@@ -14,13 +14,24 @@ public class Punto3 {
     private int y;
     
     public Punto3(){
-        
+        System.out.println("COnstructor sin argumentos");
     }
     
     public Punto3(int x,int y){
         this.x = x;
         this.y = y;
+        System.out.println("Constructor de punto "+this);
     }
+    
+    @Override
+    protected void finalize() throws Throwable{
+        try {
+            System.out.println("Finalizador de putno");
+        } finally {
+            super.finalize();
+        }
+    }
+
 
     /**
      * @return the x

@@ -15,12 +15,22 @@ public class Circulo4 extends Punto3 {
 
     public Circulo4() {
         //implicita al contrustructor padre
+        System.out.println("constructor sin argumentos de circulo "+this);
     }
 
     public Circulo4(int x, int y, double r) {
         //no se tienen estos datos
         super(x, y);
         setRadio(r);
+        
+        System.out.println("constructor de circulo "+this);
+    }
+    
+    @Override
+    protected void finalize(){
+        System.out.println("Finalizador de circulo !"+this);
+    
+        super.finalize();
     }
 
     /**
