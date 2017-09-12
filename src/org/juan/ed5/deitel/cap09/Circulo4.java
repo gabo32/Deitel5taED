@@ -5,6 +5,9 @@
  */
 package org.juan.ed5.deitel.cap09;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author JuanVaio
@@ -28,9 +31,13 @@ public class Circulo4 extends Punto3 {
     
     @Override
     protected void finalize(){
-        System.out.println("Finalizador de circulo !"+this);
-    
-        super.finalize();
+        try {
+            System.out.println("Finalizador de circulo !"+this);
+            
+            super.finalize();
+        } catch (Throwable ex) {
+            Logger.getLogger(Circulo4.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
